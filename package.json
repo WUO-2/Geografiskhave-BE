@@ -4,7 +4,10 @@
   "main": "./index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "compose:up": "docker-compose up -d",
+    "compose:down": "docker-compose down",
+    "compose:restart": "docker-compose restart"
   },
   "author": "",
   "license": "ISC",
