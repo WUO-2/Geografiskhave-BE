@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, PrismaClient } = require("@prisma/client");
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
@@ -17,6 +17,37 @@ router.post("/register", (req, res) => {
     res.status(201).send(user);
   } catch (error) {
     res.status(400).send("Unable to create user");
+  }
+});
+
+router.get("/user", async (req, res) => {
+  try {
+    const { requesterid } = req.headers;
+    const user = await prisma.user.findUnique({
+      where: {
+        id: requesterid,
+      },
+    });
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+router.get("/coins", async (req, res) => {
+  try {
+    const { requesterid } = req.headers;
+    const coins = await prisma.user.findUnique({
+      where: {
+        id: requesterid,
+      },
+      select: {
+        points: true,
+      },
+    });
+    res.status(200).send({ points: coins.points });
+  } catch (error) {
+    res.status(400).send(error);
   }
 });
 
