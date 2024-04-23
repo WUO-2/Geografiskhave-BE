@@ -2,6 +2,9 @@
   "name": "geografiskhave-be",
   "version": "1.0.0",
   "main": "./index.js",
+  "prisma": {
+    "seed": "node prisma/seeder/seeder.js"
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
@@ -10,7 +13,8 @@
     "compose:restart": "docker-compose restart",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:generate": "npx prisma generate",
-    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate"
+    "prisma:seed": "npx prisma db seed",
+    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed"
   },
   "author": "",
   "license": "ISC",
