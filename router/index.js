@@ -6,5 +6,6 @@ router.get("/status", (req, res) => {
 
 router.use("/auth", require("./auth"));
 router.use("/treasurehunt", require("./treasurehunt"));
+router.use("/map", require("./map"));
 
 module.exports = router;

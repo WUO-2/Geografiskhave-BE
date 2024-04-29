@@ -295,6 +295,67 @@ const main = async () => {
       answer: "Answer 18",
     },
   });
+
+  const Poi1 = await prismaClient.poi.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      id: 1,
+      name: "Rosenhaven",
+      description:
+        "Er du blomsterelsker, havenørd eller bare fisk på en skøn grøn oplevelse, så tag på opdagelse i vores pris-belønnede botaniske have, der byder på 14 ha med mere end 2000 forskellige arter og sorter af træer, buske og blomster indsamlet fra det meste af verden og plantet efter oprindelsesland. \n \nHaven er som nævnt prisbelønnet for de smukke rosenhaver med mere end 300 forskellige roser både historiske, moderne og vilde roser.",
+      latitude: 55.472741,
+      longitude: 9.492773,
+    },
+  });
+  const Poi2 = await prismaClient.poi.upsert({
+    where: { id: 2 },
+    update: {},
+    create: {
+      id: 2,
+      name: "Toilet",
+      description: "Toiletterne er placeret ved indgangen",
+      latitude: 55.473075,
+      longitude: 9.490913,
+    },
+  });
+
+  const Poi3 = await prismaClient.poi.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      id: 3,
+      name: "Kaktushaven",
+      description:
+        "Kaktushaven er en af de mest populære haver i Geografisk Have",
+      latitude: 55.472896,
+      longitude: 9.491446,
+    },
+  });
+
+  const Poi4 = await prismaClient.poi.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      id: 4,
+      name: "Legeplads",
+      description: " Legepladsen er et hit for børn i alle aldre",
+      latitude: 55.473255,
+      longitude: 9.491787,
+    },
+  });
+
+  const Poi5 = await prismaClient.poi.upsert({
+    where: { id: 5 },
+    update: {},
+    create: {
+      id: 5,
+      name: "Drivhus",
+      description: " Drivhuset er fyldt med spændende planter fra hele verden",
+      latitude: 55.474184,
+      longitude: 9.491852,
+    },
+  });
 };
 
 main()

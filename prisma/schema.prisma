@@ -53,3 +53,11 @@ model Answer {
   task      Task    @relation(fields: [taskId], references: [id])
   taskId    Int
 }
+
+model Poi {
+    id        Int     @id @default(autoincrement())
+    name      String
+    longitude Float
+    latitude  Float
+    description String
+  }
