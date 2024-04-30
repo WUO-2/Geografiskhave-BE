@@ -145,4 +145,35 @@ router.get("/tasks", async (req, res) => {
   }
 });
 
+router.get("/task", async (req, res) => {
+  console.log(req.headers.requesterid);
+  try {
+    const { requesterid } = req.headers;
+
+    const { currentTaskId } = await prisma.user.findUnique({
+      where: {
+        id: requesterid,
+      },
+      select: {
+        currentTaskId: true,
+      },
+    });
+
+    const task = await prisma.task.findUnique({
+      where: {
+        id: currentTaskId,
+      },
+      include: {
+        treasureHunt: true,
+        answers: true,
+      },
+    });
+
+    console.log(task);
+    res.status(200).send(task);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
