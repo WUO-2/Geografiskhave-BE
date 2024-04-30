@@ -199,7 +199,7 @@ const main = async () => {
       id: 8,
       taskId: 3,
       isCorrect: false,
-      answer: "to",
+      answer: "To",
       imageURL: "http://localhost:5000/assets/skattejagt/answers/2.png",
     },
   });
