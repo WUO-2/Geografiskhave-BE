@@ -163,9 +163,10 @@ router.get("/task", async (req, res) => {
       where: {
         id: currentTaskId,
       },
-      include: {
-        treasureHunt: true,
-        answers: true,
+      select: {
+        id: true,
+        name: true,
+        description: true,
       },
     });
 
