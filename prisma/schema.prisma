@@ -38,11 +38,14 @@ model Task {
   treasureHuntId Int
   answers        Answer[]
   User           User[]
+  imageURL       String
+  info        String
 }
 
 model Answer {
   id        Int     @id @default(autoincrement())
   answer    String
+  imageURL  String
   isCorrect Boolean
   task      Task    @relation(fields: [taskId], references: [id])
   taskId    Int

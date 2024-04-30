@@ -17,12 +17,14 @@ const main = async () => {
     update: {},
     create: {
       id: 1,
-      name: "Task 1",
+      name: "Legepladsen",
       treasureHuntId: 1,
       latitude: 55.474527,
       longitude: 9.491861,
       description: "Task 1 Description",
-      question: "Task 1 Question",
+      question: "Hvilket slags blad kan I finde nær legepladsen?",
+      imageURL: "http://localhost:5000/assets/skattejagt/images/legeplads.jpg",
+      info: "Jeres første eventyr begynder nær indgangen til Geografisk Have. I skal sætte kursen mod legepladsen, hvor den første opgave venter på jer.",
     },
   });
   const task2 = await prismaClient.task.upsert({
@@ -30,12 +32,14 @@ const main = async () => {
     update: {},
     create: {
       id: 2,
-      name: "Task 2",
+      name: "Dyrefolden",
       treasureHuntId: 1,
       latitude: 55.474475,
       longitude: 9.49227,
-      description: "Task 2 Description",
-      question: "Task 2 Question",
+      description: "Hvilket dyr kan I finde i vores dyrefold?",
+      question: "Hvilket dyr kan I finde i vores dyrefold?",
+      imageURL: "http://localhost:5000/assets/skattejagt/images/dyrefolden.jpg",
+      info: "Nu skal I videre til dyrefolden! Find den næste opgave nær vores søde dyr for at fortsætte eventyret.",
     },
   });
 
@@ -44,12 +48,14 @@ const main = async () => {
     update: {},
     create: {
       id: 3,
-      name: "Task 3",
+      name: "Væksthusene",
       treasureHuntId: 1,
       latitude: 55.474162,
       longitude: 9.491851,
-      description: "Task 3 Description",
-      question: "Task 3 Question",
+      description: "Hvor mange væksthuse har Geografisk Have?",
+      question: "Hvor mange væksthuse har Geografisk Have?",
+      imageURL: "http://localhost:5000/assets/skattejagt/images/væksthuset.jpg",
+      info: "Nu skal I videre til væksthusene, hvor I kan finde jeres næste opgave blandt de eksotiske planter.",
     },
   });
 
@@ -58,12 +64,15 @@ const main = async () => {
     update: {},
     create: {
       id: 4,
-      name: "Task 4",
+      name: "Naturhaven",
       treasureHuntId: 1,
       latitude: 55.473834,
       longitude: 9.491494,
-      description: "Task 4 Description",
-      question: "Task 4 Question",
+      description: "Hvilket dyr har deres eget hotel i Naturhaven?",
+      question: "Hvilket dyr har deres eget hotel i Naturhaven?",
+      imageURL:
+        "http://localhost:5000/assets/skattejagt/images/naturehaven.png",
+      info: "Turen går videre til Naturhaven, hvor jeres næste opgave venter. Mens I er der, hvorfor så ikke også kigge forbi den økologiske køkkenhave?",
     },
   });
 
@@ -72,12 +81,14 @@ const main = async () => {
     update: {},
     create: {
       id: 5,
-      name: "Task 5",
+      name: "Tumlehaven",
       treasureHuntId: 1,
       latitude: 55.473241,
       longitude: 9.491793,
       description: "Task 5 Description",
-      question: "Task 5 Question",
+      question: "Hvad er navnet på caféen i Geografisk Have?",
+      imageURL: "http://localhost:5000/assets/skattejagt/images/tumlehaven.jpg",
+      info: "I er snart i mål med skattejagten! Gå videre til Tumlehaven Legeplads, hvor jeres opgave venter på jer.",
     },
   });
 
@@ -86,12 +97,14 @@ const main = async () => {
     update: {},
     create: {
       id: 6,
-      name: "Task 6",
+      name: "Rosenhaven",
       treasureHuntId: 1,
       latitude: 55.472732,
       longitude: 9.492775,
       description: "Task 6 Description",
-      question: "Task 6 Question",
+      question: "Hvilken blomst kan i finde i vores Rosenhave?",
+      imageURL: "http://localhost:5000/assets/skattejagt/images/rosenhaven.jpg",
+      info: "Jeres sidste eventyr stopper ved Rosenhave, hvor der findes mange forskellige slags roser. ",
     },
   });
 
@@ -101,8 +114,9 @@ const main = async () => {
     create: {
       id: 1,
       taskId: 1,
-      isCorrect: false,
-      answer: "Answer 1",
+      isCorrect: true,
+      answer: "Bambus",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/bamboo.png",
     },
   });
 
@@ -113,7 +127,8 @@ const main = async () => {
       id: 2,
       taskId: 1,
       isCorrect: false,
-      answer: "Answer 2",
+      answer: "Eg",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/oak.png",
     },
   });
 
@@ -123,8 +138,9 @@ const main = async () => {
     create: {
       id: 3,
       taskId: 1,
-      isCorrect: true,
-      answer: "Answer 3",
+      isCorrect: false,
+      answer: "Kastanje",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/chestnut.png",
     },
   });
 
@@ -135,7 +151,8 @@ const main = async () => {
       id: 4,
       taskId: 2,
       isCorrect: false,
-      answer: "Answer 4",
+      answer: "Ko",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/cow.png",
     },
   });
 
@@ -146,7 +163,8 @@ const main = async () => {
       id: 5,
       taskId: 2,
       isCorrect: true,
-      answer: "Answer 5",
+      answer: "Hest",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/horse.png",
     },
   });
 
@@ -157,7 +175,8 @@ const main = async () => {
       id: 6,
       taskId: 2,
       isCorrect: false,
-      answer: "Answer 6",
+      answer: "Elefant",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/elephant.png",
     },
   });
 
@@ -168,7 +187,8 @@ const main = async () => {
       id: 7,
       taskId: 3,
       isCorrect: false,
-      answer: "Answer 7",
+      answer: "Et",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/1.png",
     },
   });
 
@@ -179,7 +199,8 @@ const main = async () => {
       id: 8,
       taskId: 3,
       isCorrect: false,
-      answer: "Answer 8",
+      answer: "to",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/2.png",
     },
   });
 
@@ -190,7 +211,8 @@ const main = async () => {
       id: 9,
       taskId: 3,
       isCorrect: true,
-      answer: "Answer 9",
+      answer: "Tre",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/3.png",
     },
   });
 
@@ -200,8 +222,9 @@ const main = async () => {
     create: {
       id: 10,
       taskId: 4,
-      isCorrect: false,
-      answer: "Answer 10",
+      isCorrect: true,
+      answer: "Insekter",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/insekter.png",
     },
   });
 
@@ -211,8 +234,9 @@ const main = async () => {
     create: {
       id: 11,
       taskId: 4,
-      isCorrect: true,
-      answer: "Answer 11",
+      isCorrect: false,
+      answer: "Høns",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/chicken.png",
     },
   });
 
@@ -223,7 +247,8 @@ const main = async () => {
       id: 12,
       taskId: 4,
       isCorrect: false,
-      answer: "Answer 12",
+      answer: "Katte",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/cat.png",
     },
   });
 
@@ -234,7 +259,8 @@ const main = async () => {
       id: 13,
       taskId: 5,
       isCorrect: true,
-      answer: "Answer 13",
+      answer: "Café Lykkefund",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/lykkefund.png",
     },
   });
 
@@ -245,52 +271,44 @@ const main = async () => {
       id: 14,
       taskId: 5,
       isCorrect: false,
-      answer: "Answer 14",
+      answer: "Café Rosa",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/rose1.png",
     },
   });
 
   const answer15 = await prismaClient.answer.upsert({
-    where: { id: 15 },
-    update: {},
-    create: {
-      id: 15,
-      taskId: 5,
-      isCorrect: false,
-      answer: "Answer 15",
-    },
-  });
-
-  const answer16 = await prismaClient.answer.upsert({
     where: { id: 16 },
     update: {},
     create: {
       id: 16,
       taskId: 6,
-
       isCorrect: false,
-      answer: "Answer 16",
+      answer: "Påskelilje",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/daffodil.png",
     },
   });
 
-  const answer17 = await prismaClient.answer.upsert({
+  const answer16 = await prismaClient.answer.upsert({
     where: { id: 17 },
     update: {},
     create: {
       id: 17,
       taskId: 6,
-      isCorrect: true,
-      answer: "Answer 17",
+      isCorrect: false,
+      answer: "Tulipan",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/tulip.png",
     },
   });
 
-  const answer18 = await prismaClient.answer.upsert({
+  const answer17 = await prismaClient.answer.upsert({
     where: { id: 18 },
     update: {},
     create: {
       id: 18,
       taskId: 6,
-      isCorrect: false,
-      answer: "Answer 18",
+      isCorrect: true,
+      answer: "Rose",
+      imageURL: "http://localhost:5000/assets/skattejagt/answers/rose2.png",
     },
   });
 
