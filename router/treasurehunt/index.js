@@ -131,4 +131,18 @@ router.post("/answer", async (req, res) => {
   }
 });
 
+router.get("/tasks", async (req, res) => {
+  try {
+    const tasks = await prisma.task.findMany({
+      include: {
+        treasureHunt: true,
+        answers: true,
+      },
+    });
+    res.status(200).send(tasks);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
