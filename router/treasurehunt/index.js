@@ -24,6 +24,27 @@ router.get("/task/:id", async (req, res) => {
 router.post("/start", async (req, res) => {
   try {
     const { id } = req.body;
+
+    const user = await prisma.user.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    if (user.currentTaskId !== null) {
+      const task = await prisma.task.findUnique({
+        where: {
+          id: user.currentTaskId,
+        },
+        include: {
+          treasureHunt: true,
+          answers: true,
+        },
+      });
+      res.status(200).send(task);
+      return;
+    }
+
     const { currentTaskId } = await prisma.user.update({
       where: { id: id },
       data: {
@@ -105,6 +126,20 @@ router.post("/answer", async (req, res) => {
     } else {
       res.status(200).send({ message: "Wrong answer" });
     }
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+router.get("/tasks", async (req, res) => {
+  try {
+    const tasks = await prisma.task.findMany({
+      include: {
+        treasureHunt: true,
+        answers: true,
+      },
+    });
+    res.status(200).send(tasks);
   } catch (error) {
     res.status(400).send(error);
   }
