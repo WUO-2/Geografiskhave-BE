@@ -177,4 +177,29 @@ router.get("/task", async (req, res) => {
   }
 });
 
+router.patch("/points", async (req, res) => {
+  try {
+    console.log(req.body);
+    const { id, points } = req.body;
+    const user = await prisma.user.findUnique({
+      where: {
+        id: id,
+      },
+      select: {
+        points: true
+      }
+    });
+    const updatedPoints = user.points + points
+    await prisma.user.update({
+      where: { id: id },
+      data: {
+        points: updatedPoints,
+      },
+    });
+    res.status(200).send({message: "points updated", totalPoints: updatedPoints});
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
