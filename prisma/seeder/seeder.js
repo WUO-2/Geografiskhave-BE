@@ -25,6 +25,7 @@ const main = async () => {
       question: "Hvilket slags blad kan I finde nær legepladsen?",
       imageURL: "http://localhost:5000/assets/skattejagt/images/legeplads.jpg",
       info: "Jeres første eventyr begynder nær indgangen til Geografisk Have. I skal sætte kursen mod legepladsen, hvor den første opgave venter på jer.",
+      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
     },
   });
   const task2 = await prismaClient.task.upsert({
@@ -40,6 +41,7 @@ const main = async () => {
       question: "Hvilket dyr kan I finde i vores dyrefold?",
       imageURL: "http://localhost:5000/assets/skattejagt/images/dyrefolden.jpg",
       info: "Nu skal I videre til dyrefolden! Find den næste opgave nær vores søde dyr for at fortsætte eventyret.",
+      iconURL: "http://localhost:5000/assets/icons/Dyrefolden.png",
     },
   });
 
@@ -56,6 +58,7 @@ const main = async () => {
       question: "Hvor mange væksthuse har Geografisk Have?",
       imageURL: "http://localhost:5000/assets/skattejagt/images/væksthuset.jpg",
       info: "Nu skal I videre til væksthusene, hvor I kan finde jeres næste opgave blandt de eksotiske planter.",
+      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
     },
   });
 
@@ -73,6 +76,7 @@ const main = async () => {
       imageURL:
         "http://localhost:5000/assets/skattejagt/images/naturehaven.png",
       info: "Turen går videre til Naturhaven, hvor jeres næste opgave venter. Mens I er der, hvorfor så ikke også kigge forbi den økologiske køkkenhave?",
+      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
     },
   });
 
@@ -89,6 +93,7 @@ const main = async () => {
       question: "Hvad er navnet på caféen i Geografisk Have?",
       imageURL: "http://localhost:5000/assets/skattejagt/images/tumlehaven.jpg",
       info: "I er snart i mål med skattejagten! Gå videre til Tumlehaven Legeplads, hvor jeres opgave venter på jer.",
+      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
     },
   });
 
@@ -105,6 +110,7 @@ const main = async () => {
       question: "Hvilken blomst kan i finde i vores Rosenhave?",
       imageURL: "http://localhost:5000/assets/skattejagt/images/rosenhaven.jpg",
       info: "Jeres sidste eventyr stopper ved Rosenhave, hvor der findes mange forskellige slags roser. ",
+      iconURL: "http://localhost:5000/assets/icons/Rosenhaven.png",
     },
   });
 
@@ -322,6 +328,8 @@ const main = async () => {
         "Er du blomsterelsker, havenørd eller bare fisk på en skøn grøn oplevelse, så tag på opdagelse i vores pris-belønnede botaniske have, der byder på 14 ha med mere end 2000 forskellige arter og sorter af træer, buske og blomster indsamlet fra det meste af verden og plantet efter oprindelsesland. \n \nHaven er som nævnt prisbelønnet for de smukke rosenhaver med mere end 300 forskellige roser både historiske, moderne og vilde roser.",
       latitude: 55.472741,
       longitude: 9.492773,
+      imageURL: "http://localhost:5000/assets/skattejagt/images/rosenhaven.jpg",
+      iconURL: "http://localhost:5000/assets/icons/Rosenhaven.png",
     },
   });
   const Poi2 = await prismaClient.poi.upsert({
@@ -329,10 +337,13 @@ const main = async () => {
     update: {},
     create: {
       id: 2,
-      name: "Toilet",
-      description: "Toiletterne er placeret ved indgangen",
-      latitude: 55.473075,
-      longitude: 9.490913,
+      name: "Dyrefolden",
+      description:
+        "I dyrefolden kan I møde vores søde dyr, som er en del af Geografisk Have. ",
+      latitude: 55.474475,
+      longitude: 9.49227,
+      imageURL: "http://localhost:5000/assets/skattejagt/images/dyrefolden.jpg",
+      iconURL: "http://localhost:5000/assets/icons/Dyrefolden.png",
     },
   });
 
@@ -341,11 +352,12 @@ const main = async () => {
     update: {},
     create: {
       id: 3,
-      name: "Kaktushaven",
-      description:
-        "Kaktushaven er en af de mest populære haver i Geografisk Have",
-      latitude: 55.472896,
-      longitude: 9.491446,
+      name: "Væksthusene",
+      description: "væksthusene er fyldt med spændende planter fra hele verden",
+      latitude: 55.474162,
+      longitude: 9.491851,
+      imageURL: "http://localhost:5000/assets/skattejagt/images/væksthuset.jpg",
+      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
     },
   });
 
@@ -354,10 +366,13 @@ const main = async () => {
     update: {},
     create: {
       id: 4,
-      name: "Legeplads",
-      description: " Legepladsen er et hit for børn i alle aldre",
-      latitude: 55.473255,
-      longitude: 9.491787,
+      name: "Naturhaven",
+      description: "Naturhaven er fyldt med spændende planter fra hele verden",
+      latitude: 55.473834,
+      longitude: 9.491494,
+      imageURL:
+        "http://localhost:5000/assets/skattejagt/images/naturehaven.png",
+      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
     },
   });
 
@@ -366,10 +381,26 @@ const main = async () => {
     update: {},
     create: {
       id: 5,
-      name: "Drivhus",
-      description: " Drivhuset er fyldt med spændende planter fra hele verden",
+      name: "Tumlehaven",
+      description: "Tumlehaven er fyldt med spændende planter fra hele verden",
+      latitude: 55.473241,
+      longitude: 9.491793,
+      imageURL: "http://localhost:5000/assets/skattejagt/images/tumlehaven.jpg",
+      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
+    },
+  });
+
+  const Poi6 = await prismaClient.poi.upsert({
+    where: { id: 6 },
+    update: {},
+    create: {
+      id: 6,
+      name: "Legepladsen",
+      description: "Legepladsen er fyldt med spændende planter fra hele verden",
       latitude: 55.474184,
       longitude: 9.491852,
+      imageURL: "http://localhost:5000/assets/skattejagt/images/legeplads.jpg",
+      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
     },
   });
 };

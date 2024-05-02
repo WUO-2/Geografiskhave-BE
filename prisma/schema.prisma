@@ -13,6 +13,7 @@ model User {
   badges        Badge[]
   currentTask   Task?   @relation(fields: [currentTaskId], references: [id])
   currentTaskId Int?
+  imageURL      String  @default("http://localhost:5000/assets/avatars/bird.png")
 }
 
 model Badge {
@@ -39,7 +40,8 @@ model Task {
   answers        Answer[]
   User           User[]
   imageURL       String
-  info        String
+  info           String
+  iconURL        String
 }
 
 model Answer {
@@ -57,4 +59,6 @@ model Poi {
   longitude   Float
   latitude    Float
   description String
+  imageURL    String
+  iconURL     String
 }
