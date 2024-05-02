@@ -49,6 +49,7 @@ router.post("/start", async (req, res) => {
       where: { id: id },
       data: {
         currentTaskId: 1,
+        treasureHuntStatus: "IN_PROGRESS",
       },
       select: {
         currentTaskId: true,
@@ -131,6 +132,22 @@ router.post("/answer", async (req, res) => {
   }
 });
 
+router.post("/end", async (req, res) => {
+  try {
+    const { id } = req.body;
+    await prisma.user.update({
+      where: { id: id },
+      data: {
+        currentTaskId: null,
+        treasureHuntStatus: "FINISHED",
+      },
+    });
+    res.status(200).send({ message: "treasurehunt ended" });
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 router.get("/tasks", async (req, res) => {
   try {
     const tasks = await prisma.task.findMany({
@@ -186,17 +203,19 @@ router.patch("/points", async (req, res) => {
         id: id,
       },
       select: {
-        points: true
-      }
+        points: true,
+      },
     });
-    const updatedPoints = user.points + points
+    const updatedPoints = user.points + points;
     await prisma.user.update({
       where: { id: id },
       data: {
         points: updatedPoints,
       },
     });
-    res.status(200).send({message: "points updated", totalPoints: updatedPoints});
+    res
+      .status(200)
+      .send({ message: "points updated", totalPoints: updatedPoints });
   } catch (error) {
     res.status(400).send(error);
   }

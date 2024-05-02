@@ -14,6 +14,7 @@ model User {
   currentTask   Task?   @relation(fields: [currentTaskId], references: [id])
   currentTaskId Int?
   imageURL      String  @default("http://localhost:5000/assets/avatars/bird.png")
+  treasureHuntStatus        Status  @default(NOT_STARTED)
 }
 
 model Badge {
@@ -26,6 +27,12 @@ model TreasureHunt {
   id   Int    @id @default(autoincrement())
   name String
   Task Task[]
+}
+
+enum Status {
+  NOT_STARTED
+  IN_PROGRESS
+  FINISHED
 }
 
 model Task {
