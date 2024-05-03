@@ -180,10 +180,9 @@ router.get("/task", async (req, res) => {
       where: {
         id: currentTaskId,
       },
-      select: {
-        id: true,
-        name: true,
-        description: true,
+      include: {
+        answers: true,
+        treasureHunt: true,
       },
     });
 
