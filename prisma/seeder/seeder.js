@@ -23,9 +23,10 @@ const main = async () => {
       longitude: 9.491861,
       description: "Task 1 Description",
       question: "Hvilket slags blad kan I finde nær legepladsen?",
-      imageURL: "http://localhost:5000/assets/skattejagt/images/legeplads.jpg",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/legeplads.jpg",
       info: "Jeres første eventyr begynder nær indgangen til Geografisk Have. I skal sætte kursen mod legepladsen, hvor den første opgave venter på jer.",
-      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Legeplads.png",
     },
   });
   const task2 = await prismaClient.task.upsert({
@@ -39,9 +40,10 @@ const main = async () => {
       longitude: 9.49227,
       description: "Hvilket dyr kan I finde i vores dyrefold?",
       question: "Hvilket dyr kan I finde i vores dyrefold?",
-      imageURL: "http://localhost:5000/assets/skattejagt/images/dyrefolden.jpg",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/dyrefolden.jpg",
       info: "Nu skal I videre til dyrefolden! Find den næste opgave nær vores søde dyr for at fortsætte eventyret.",
-      iconURL: "http://localhost:5000/assets/icons/Dyrefolden.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Dyrefolden.png",
     },
   });
 
@@ -56,9 +58,10 @@ const main = async () => {
       longitude: 9.491851,
       description: "Hvor mange væksthuse har Geografisk Have?",
       question: "Hvor mange væksthuse har Geografisk Have?",
-      imageURL: "http://localhost:5000/assets/skattejagt/images/væksthuset.jpg",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/væksthuset.jpg",
       info: "Nu skal I videre til væksthusene, hvor I kan finde jeres næste opgave blandt de eksotiske planter.",
-      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/icon_plant.png",
     },
   });
 
@@ -74,9 +77,9 @@ const main = async () => {
       description: "Hvilket dyr har deres eget hotel i Naturhaven?",
       question: "Hvilket dyr har deres eget hotel i Naturhaven?",
       imageURL:
-        "http://localhost:5000/assets/skattejagt/images/naturehaven.png",
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/naturehaven.png",
       info: "Turen går videre til Naturhaven, hvor jeres næste opgave venter. Mens I er der, hvorfor så ikke også kigge forbi den økologiske køkkenhave?",
-      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/icon_plant.png",
     },
   });
 
@@ -91,9 +94,10 @@ const main = async () => {
       longitude: 9.491793,
       description: "Task 5 Description",
       question: "Hvad er navnet på caféen i Geografisk Have?",
-      imageURL: "http://localhost:5000/assets/skattejagt/images/tumlehaven.jpg",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/tumlehaven.jpg",
       info: "I er snart i mål med skattejagten! Gå videre til Tumlehaven Legeplads, hvor jeres opgave venter på jer.",
-      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Legeplads.png",
     },
   });
 
@@ -108,9 +112,10 @@ const main = async () => {
       longitude: 9.492775,
       description: "Task 6 Description",
       question: "Hvilken blomst kan i finde i vores Rosenhave?",
-      imageURL: "http://localhost:5000/assets/skattejagt/images/rosenhaven.jpg",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/rosenhaven.jpg",
       info: "Jeres sidste eventyr stopper ved Rosenhave, hvor der findes mange forskellige slags roser. ",
-      iconURL: "http://localhost:5000/assets/icons/Rosenhaven.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Rosenhaven.png",
     },
   });
 
@@ -122,7 +127,8 @@ const main = async () => {
       taskId: 1,
       isCorrect: true,
       answer: "Bambus",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/bamboo.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/bamboo.png",
     },
   });
 
@@ -134,7 +140,8 @@ const main = async () => {
       taskId: 1,
       isCorrect: false,
       answer: "Eg",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/oak.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/oak.png",
     },
   });
 
@@ -146,7 +153,8 @@ const main = async () => {
       taskId: 1,
       isCorrect: false,
       answer: "Kastanje",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/chestnut.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/chestnut.png",
     },
   });
 
@@ -158,7 +166,8 @@ const main = async () => {
       taskId: 2,
       isCorrect: false,
       answer: "Ko",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/cow.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/cow.png",
     },
   });
 
@@ -170,7 +179,8 @@ const main = async () => {
       taskId: 2,
       isCorrect: true,
       answer: "Hest",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/horse.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/horse.png",
     },
   });
 
@@ -182,7 +192,8 @@ const main = async () => {
       taskId: 2,
       isCorrect: false,
       answer: "Elefant",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/elephant.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/elephant.png",
     },
   });
 
@@ -194,7 +205,8 @@ const main = async () => {
       taskId: 3,
       isCorrect: false,
       answer: "Et",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/1.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/1.png",
     },
   });
 
@@ -206,7 +218,8 @@ const main = async () => {
       taskId: 3,
       isCorrect: false,
       answer: "To",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/2.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/2.png",
     },
   });
 
@@ -218,7 +231,8 @@ const main = async () => {
       taskId: 3,
       isCorrect: true,
       answer: "Tre",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/3.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/3.png",
     },
   });
 
@@ -230,7 +244,8 @@ const main = async () => {
       taskId: 4,
       isCorrect: true,
       answer: "Insekter",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/insekter.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/insekter.png",
     },
   });
 
@@ -242,7 +257,8 @@ const main = async () => {
       taskId: 4,
       isCorrect: false,
       answer: "Høns",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/chicken.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/chicken.png",
     },
   });
 
@@ -254,7 +270,8 @@ const main = async () => {
       taskId: 4,
       isCorrect: false,
       answer: "Katte",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/cat.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/cat.png",
     },
   });
 
@@ -266,7 +283,8 @@ const main = async () => {
       taskId: 5,
       isCorrect: true,
       answer: "Café Lykkefund",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/lykkefund.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/lykkefund.png",
     },
   });
 
@@ -278,7 +296,8 @@ const main = async () => {
       taskId: 5,
       isCorrect: false,
       answer: "Café Rosa",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/rose1.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/rose1.png",
     },
   });
 
@@ -290,7 +309,8 @@ const main = async () => {
       taskId: 6,
       isCorrect: false,
       answer: "Påskelilje",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/daffodil.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/daffodil.png",
     },
   });
 
@@ -302,7 +322,8 @@ const main = async () => {
       taskId: 6,
       isCorrect: false,
       answer: "Tulipan",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/tulip.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/tulip.png",
     },
   });
 
@@ -314,7 +335,8 @@ const main = async () => {
       taskId: 6,
       isCorrect: true,
       answer: "Rose",
-      imageURL: "http://localhost:5000/assets/skattejagt/answers/rose2.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/answers/rose2.png",
     },
   });
 
@@ -328,8 +350,9 @@ const main = async () => {
         "Er du blomsterelsker, havenørd eller bare fisk på en skøn grøn oplevelse, så tag på opdagelse i vores pris-belønnede botaniske have, der byder på 14 ha med mere end 2000 forskellige arter og sorter af træer, buske og blomster indsamlet fra det meste af verden og plantet efter oprindelsesland. \n \nHaven er som nævnt prisbelønnet for de smukke rosenhaver med mere end 300 forskellige roser både historiske, moderne og vilde roser.",
       latitude: 55.472741,
       longitude: 9.492773,
-      imageURL: "http://localhost:5000/assets/skattejagt/images/rosenhaven.jpg",
-      iconURL: "http://localhost:5000/assets/icons/Rosenhaven.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/rosenhaven.jpg",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Rosenhaven.png",
     },
   });
   const Poi2 = await prismaClient.poi.upsert({
@@ -342,8 +365,9 @@ const main = async () => {
         "I dyrefolden kan I møde vores søde dyr, som er en del af Geografisk Have. ",
       latitude: 55.474475,
       longitude: 9.49227,
-      imageURL: "http://localhost:5000/assets/skattejagt/images/dyrefolden.jpg",
-      iconURL: "http://localhost:5000/assets/icons/Dyrefolden.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/dyrefolden.jpg",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Dyrefolden.png",
     },
   });
 
@@ -356,8 +380,9 @@ const main = async () => {
       description: "væksthusene er fyldt med spændende planter fra hele verden",
       latitude: 55.474162,
       longitude: 9.491851,
-      imageURL: "http://localhost:5000/assets/skattejagt/images/væksthuset.jpg",
-      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/væksthuset.jpg",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/icon_plant.png",
     },
   });
 
@@ -371,8 +396,8 @@ const main = async () => {
       latitude: 55.473834,
       longitude: 9.491494,
       imageURL:
-        "http://localhost:5000/assets/skattejagt/images/naturehaven.png",
-      iconURL: "http://localhost:5000/assets/icons/icon_plant.png",
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/naturehaven.png",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/icon_plant.png",
     },
   });
 
@@ -385,8 +410,9 @@ const main = async () => {
       description: "Tumlehaven er fyldt med spændende planter fra hele verden",
       latitude: 55.473241,
       longitude: 9.491793,
-      imageURL: "http://localhost:5000/assets/skattejagt/images/tumlehaven.jpg",
-      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/tumlehaven.jpg",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Legeplads.png",
     },
   });
 
@@ -399,8 +425,62 @@ const main = async () => {
       description: "Legepladsen er fyldt med spændende planter fra hele verden",
       latitude: 55.474184,
       longitude: 9.491852,
-      imageURL: "http://localhost:5000/assets/skattejagt/images/legeplads.jpg",
-      iconURL: "http://localhost:5000/assets/icons/Legeplads.png",
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/skattejagt/images/legeplads.jpg",
+      iconURL: "https://geo-api.frannoflix.xyz/assets/icons/Legeplads.png",
+    },
+  });
+
+  const badge1 = await prismaClient.badge.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      id: 1,
+      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgeKompas.png",
+    },
+  });
+
+  const badge2 = await prismaClient.badge.upsert({
+    where: { id: 2 },
+    update: {},
+    create: {
+      id: 2,
+      imageURL:
+        "https://geo-api.frannoflix.xyz/assets/badges/BadgeScavenger.png",
+    },
+  });
+
+  const badge3 = await prismaClient.badge.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      id: 3,
+      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgeProfil.png",
+    },
+  });
+
+  const user1 = await prismaClient.user.upsert({
+    where: { id: "jDmGijfrzTN2OHKjKWoNlfOtc4Q2" },
+    update: {},
+    create: {
+      id: "jDmGijfrzTN2OHKjKWoNlfOtc4Q2",
+      points: 100,
+      badges: {
+        create: [
+          {
+            badgeId: 1,
+            completed: true,
+          },
+          {
+            badgeId: 2,
+            completed: false,
+          },
+          {
+            badgeId: 3,
+            completed: false,
+          },
+        ],
+      },
     },
   });
 };

@@ -28,7 +28,23 @@ router.get("/user", async (req, res) => {
         id: requesterid,
       },
     });
-    res.status(200).send(user);
+
+    const badges = await prisma.badgesOnUsers.findMany({
+      where: {
+        userId: requesterid,
+      },
+      include: {
+        badge: true,
+      },
+    });
+
+    const assembledUser = {
+      ...user,
+      badges: [...badges],
+    };
+
+    console.log(assembledUser);
+    res.status(200).send(assembledUser);
   } catch (error) {
     res.status(400).send(error);
   }
