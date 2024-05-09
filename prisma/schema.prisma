@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets   = ["native", "debian-openssl-1.1.x"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
 
 datasource db {
@@ -9,19 +9,30 @@ datasource db {
 }
 
 model User {
-  id            String  @id @db.VarChar(36)
-  points        Int     @default(0)
-  badges        Badge[]
-  currentTask   Task?   @relation(fields: [currentTaskId], references: [id])
-  currentTaskId Int?
-  imageURL      String  @default("http://localhost:5000/assets/avatars/bird.png")
-  treasureHuntStatus        Status  @default(NOT_STARTED)
+  id                 String          @id @db.VarChar(36)
+  points             Int             @default(0)
+  badges             BadgesOnUsers[]
+  currentTask        Task?           @relation(fields: [currentTaskId], references: [id])
+  currentTaskId      Int?
+  imageURL           String          @default("https://geo-api.frannoflix.xyz/assets/avatars/bird.png")
+  treasureHuntStatus Status          @default(NOT_STARTED)
 }
 
 model Badge {
-  id     Int     @id @default(0)
-  User   User?   @relation(fields: [userId], references: [id])
-  userId String? @db.VarChar(36)
+  id       Int             @id @default(0)
+  users    BadgesOnUsers[]
+  imageURL String
+}
+
+model BadgesOnUsers {
+  id        Int     @id @default(autoincrement())
+  badge     Badge   @relation(fields: [badgeId], references: [id])
+  badgeId   Int
+  user      User    @relation(fields: [userId], references: [id])
+  userId    String
+  completed Boolean
+
+  @@unique(fields: [badgeId, userId], name: "unique_badge_user")
 }
 
 model TreasureHunt {

@@ -28,8 +28,64 @@ router.get("/user", async (req, res) => {
         id: requesterid,
       },
     });
-    res.status(200).send(user);
+
+    const badges = await prisma.badgesOnUsers.findMany({
+      where: {
+        userId: requesterid,
+      },
+      include: {
+        badge: true,
+      },
+    });
+
+    const assembledUser = {
+      ...user,
+      badges: [...badges],
+    };
+
+    console.log(assembledUser);
+    res.status(200).send(assembledUser);
   } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+router.post("/achievement", async (req, res) => {
+  try {
+    const { userId, badgeId } = req.body;
+    console.log(userId, badgeId);
+    const b = await prisma.badgesOnUsers.findUnique({
+      where: {
+        unique_badge_user: {
+          badgeId: badgeId,
+          userId: userId,
+        },
+      },
+    });
+
+    console.log(b);
+
+    if (b.completed) {
+      res.status(200).send({ message: "Badge already completed" });
+      return;
+    }
+
+    const badge = await prisma.badgesOnUsers.update({
+      where: {
+        unique_badge_user: {
+          badgeId: badgeId,
+          userId: userId,
+        },
+      },
+      data: {
+        completed: true,
+      },
+    });
+    console.log(badge);
+
+    res.status(201).send(badge);
+  } catch (error) {
+    console.log(error);
     res.status(400).send(error);
   }
 });
