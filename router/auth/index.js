@@ -50,6 +50,46 @@ router.get("/user", async (req, res) => {
   }
 });
 
+router.post("/achievement", async (req, res) => {
+  try {
+    const { requesterId, badgeId } = req.body;
+    console.log(requesterId, badgeId);
+    const b = await prisma.badgesOnUsers.findUnique({
+      where: {
+        unique_badge_user: {
+          badgeId: badgeId,
+          userId: requesterId,
+        },
+      },
+    });
+
+    console.log(b);
+
+    if (b.completed) {
+      res.status(200).send({ message: "Badge already completed" });
+      return;
+    }
+
+    const badge = await prisma.badgesOnUsers.update({
+      where: {
+        unique_badge_user: {
+          badgeId: badgeId,
+          userId: requesterId,
+        },
+      },
+      data: {
+        completed: true,
+      },
+    });
+    console.log(badge);
+
+    res.status(201).send(badge);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error);
+  }
+});
+
 router.get("/coins", async (req, res) => {
   try {
     const { requesterid } = req.headers;

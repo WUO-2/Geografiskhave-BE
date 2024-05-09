@@ -12,9 +12,11 @@
     "compose:down": "docker-compose down",
     "compose:restart": "docker-compose restart",
     "prisma:migrate": "npx prisma migrate dev",
+    "prisma:migrate:reset": "npx prisma migrate reset",
     "prisma:generate": "npx prisma generate",
     "prisma:seed": "npx prisma db seed",
-    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed"
+    "prisma:prod": "npm run prisma:generate && npm run prisma:migrate:reset && npm run prisma:seed",
+    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate:reset && node prisma/seeder/seederDev.js"
   },
   "author": "",
   "license": "ISC",
