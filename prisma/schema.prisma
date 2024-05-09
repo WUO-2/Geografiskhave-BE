@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets   = ["native", "debian-openssl-1.1.x"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
 
 datasource db {
@@ -9,13 +9,13 @@ datasource db {
 }
 
 model User {
-  id            String  @id @db.VarChar(36)
-  points        Int     @default(0)
-  badges        Badge[]
-  currentTask   Task?   @relation(fields: [currentTaskId], references: [id])
-  currentTaskId Int?
-  imageURL      String  @default("http://localhost:5000/assets/avatars/bird.png")
-  treasureHuntStatus        Status  @default(NOT_STARTED)
+  id                 String  @id @db.VarChar(36)
+  points             Int     @default(0)
+  badges             Badge[]
+  currentTask        Task?   @relation(fields: [currentTaskId], references: [id])
+  currentTaskId      Int?
+  imageURL           String  @default("http://localhost:5000/assets/avatars/bird.png")
+  treasureHuntStatus Status  @default(NOT_STARTED)
 }
 
 model Badge {
@@ -69,4 +69,9 @@ model Poi {
   description String
   imageURL    String
   iconURL     String
+}
+
+model Avatar {
+  id       Int    @id @default(autoincrement())
+  imageURL String
 }

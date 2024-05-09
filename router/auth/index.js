@@ -51,4 +51,13 @@ router.get("/coins", async (req, res) => {
   }
 });
 
+router.get("/avatars", async (req, res) => {
+  try {
+    const avatars = await prisma.avatar.findMany();
+    res.status(200).send(avatars);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
