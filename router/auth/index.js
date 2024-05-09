@@ -52,13 +52,13 @@ router.get("/user", async (req, res) => {
 
 router.post("/achievement", async (req, res) => {
   try {
-    const { requesterId, badgeId } = req.body;
-    console.log(requesterId, badgeId);
+    const { userId, badgeId } = req.body;
+    console.log(userId, badgeId);
     const b = await prisma.badgesOnUsers.findUnique({
       where: {
         unique_badge_user: {
           badgeId: badgeId,
-          userId: requesterId,
+          userId: userId,
         },
       },
     });
@@ -74,7 +74,7 @@ router.post("/achievement", async (req, res) => {
       where: {
         unique_badge_user: {
           badgeId: badgeId,
-          userId: requesterId,
+          userId: userId,
         },
       },
       data: {
