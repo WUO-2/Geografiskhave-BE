@@ -60,4 +60,24 @@ router.get("/avatars", async (req, res) => {
   }
 }); 
 
+router.patch("/avatar", async (req, res) => {
+  try {
+    const { imageURL, id } = req.body;
+
+    const user = await prisma.user.update({
+      where: {
+        id: id,
+      },
+      data: {
+        imageURL: imageURL,
+      },
+    });
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+
+
 module.exports = router;
