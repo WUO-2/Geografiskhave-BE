@@ -489,7 +489,7 @@ const main = async () => {
     update: {},
     create: {
       id: 1,
-      imageURL: "http://localhost:5000/assets/avatars/hen.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/hen.png",
     },
   });
 
@@ -498,7 +498,7 @@ const main = async () => {
     update: {},
     create: {
       id: 2,
-      imageURL: "http://localhost:5000/assets/avatars/rabbit.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/rabbit.png",
     },
   });
 
@@ -507,7 +507,7 @@ const main = async () => {
     update: {},
     create: {
       id: 3,
-      imageURL: "http://localhost:5000/assets/avatars/cat.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/cat.png",
     },
   });
 
@@ -516,7 +516,7 @@ const main = async () => {
     update: {},
     create: {
       id: 4,
-      imageURL: "http://localhost:5000/assets/avatars/horse.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/horse.png",
     },
   });
 
@@ -525,7 +525,7 @@ const main = async () => {
     update: {},
     create: {
       id: 5,
-      imageURL: "http://localhost:5000/assets/avatars/bird.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/bird.png",
     },
   });
 
@@ -534,7 +534,7 @@ const main = async () => {
     update: {},
     create: {
       id: 6,
-      imageURL: "http://localhost:5000/assets/avatars/goat.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/goat.png",
     },
   });
 
@@ -543,7 +543,7 @@ const main = async () => {
     update: {},
     create: {
       id: 7,
-      imageURL: "http://localhost:5000/assets/avatars/squirrel.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/squirrel.png",
     },
   });
 
@@ -552,7 +552,7 @@ const main = async () => {
     update: {},
     create: {
       id: 8,
-      imageURL: "http://localhost:5000/assets/avatars/rose.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/rose.png",
     },
   });
 
@@ -561,7 +561,7 @@ const main = async () => {
     update: {},
     create: {
       id: 9,
-      imageURL: "http://localhost:5000/assets/avatars/bamboo.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/avatars/bamboo.png",
     },
   });
 };

@@ -455,8 +455,86 @@ const main = async () => {
       },
     },
   });
+  const Avatar1 = await prismaClient.avatar.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      id: 1,
+      imageURL: "http://localhost:5000/assets/avatars/hen.png",
+    },
+  });
 
-  console.log(user1);
+  const Avatar2 = await prismaClient.avatar.upsert({
+    where: { id: 2 },
+    update: {},
+    create: {
+      id: 2,
+      imageURL: "http://localhost:5000/assets/avatars/rabbit.png",
+    },
+  });
+
+  const Avatar3 = await prismaClient.avatar.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      id: 3,
+      imageURL: "http://localhost:5000/assets/avatars/cat.png",
+    },
+  });
+
+  const Avatar4 = await prismaClient.avatar.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      id: 4,
+      imageURL: "http://localhost:5000/assets/avatars/horse.png",
+    },
+  });
+
+  const Avatar5 = await prismaClient.avatar.upsert({
+    where: { id: 5 },
+    update: {},
+    create: {
+      id: 5,
+      imageURL: "http://localhost:5000/assets/avatars/bird.png",
+    },
+  });
+
+  const Avatar6 = await prismaClient.avatar.upsert({
+    where: { id: 6 },
+    update: {},
+    create: {
+      id: 6,
+      imageURL: "http://localhost:5000/assets/avatars/goat.png",
+    },
+  });
+
+  const Avatar7 = await prismaClient.avatar.upsert({
+    where: { id: 7 },
+    update: {},
+    create: {
+      id: 7,
+      imageURL: "http://localhost:5000/assets/avatars/squirrel.png",
+    },
+  });
+
+  const Avatar8 = await prismaClient.avatar.upsert({
+    where: { id: 8 },
+    update: {},
+    create: {
+      id: 8,
+      imageURL: "http://localhost:5000/assets/avatars/rose.png",
+    },
+  });
+
+  const Avatar9 = await prismaClient.avatar.upsert({
+    where: { id: 9 },
+    update: {},
+    create: {
+      id: 9,
+      imageURL: "http://localhost:5000/assets/avatars/bamboo.png",
+    },
+  });
 };
 
 main()
