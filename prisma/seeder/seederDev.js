@@ -409,7 +409,7 @@ const main = async () => {
     update: {},
     create: {
       id: 1,
-      imageURL: "http://localhost:5000/assets/badges/BadgeKompas.png",
+      imageURL: "http://localhost:5000/assets/badges/BadgeProfile.png",
     },
   });
 
@@ -427,7 +427,7 @@ const main = async () => {
     update: {},
     create: {
       id: 3,
-      imageURL: "http://localhost:5000/assets/badges/BadgeProfil.png",
+      imageURL: "http://localhost:5000/assets/badges/BadgePræmie.png",
     },
   });
 

@@ -436,7 +436,7 @@ const main = async () => {
     update: {},
     create: {
       id: 1,
-      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgeKompas.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgeProfil.png",
     },
   });
 
@@ -455,7 +455,7 @@ const main = async () => {
     update: {},
     create: {
       id: 3,
-      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgeProfil.png",
+      imageURL: "https://geo-api.frannoflix.xyz/assets/badges/BadgePræmie.png",
     },
   });
 
