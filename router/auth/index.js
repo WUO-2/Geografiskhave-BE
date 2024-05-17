@@ -80,6 +80,9 @@ router.post("/achievement", async (req, res) => {
       data: {
         completed: true,
       },
+      include: {
+        badge: true,
+      },
     });
     console.log(badge);
 
@@ -114,7 +117,7 @@ router.get("/avatars", async (req, res) => {
   } catch (error) {
     res.status(400).send(error);
   }
-}); 
+});
 
 router.patch("/avatar", async (req, res) => {
   try {
@@ -133,7 +136,5 @@ router.patch("/avatar", async (req, res) => {
     res.status(400).send(error);
   }
 });
-
-
 
 module.exports = router;
