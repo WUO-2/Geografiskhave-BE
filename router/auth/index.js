@@ -11,8 +11,25 @@ router.post("/register", (req, res) => {
       .create({
         data: {
           id: id,
+          badges: {
+            create: [
+              {
+                badgeId: 1,
+                completed: false,
+              },
+              {
+                badgeId: 2,
+                completed: false,
+              },
+              {
+                badgeId: 3,
+                completed: false,
+              },
+            ],
+          },
         },
       })
+
       .then((user) => console.log(user));
     res.status(201).send(user);
   } catch (error) {
