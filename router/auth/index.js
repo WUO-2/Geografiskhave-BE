@@ -11,8 +11,25 @@ router.post("/register", (req, res) => {
       .create({
         data: {
           id: id,
+          badges: {
+            create: [
+              {
+                badgeId: 1,
+                completed: false,
+              },
+              {
+                badgeId: 2,
+                completed: false,
+              },
+              {
+                badgeId: 3,
+                completed: false,
+              },
+            ],
+          },
         },
       })
+
       .then((user) => console.log(user));
     res.status(201).send(user);
   } catch (error) {
@@ -80,6 +97,9 @@ router.post("/achievement", async (req, res) => {
       data: {
         completed: true,
       },
+      include: {
+        badge: true,
+      },
     });
     console.log(badge);
 
@@ -114,7 +134,7 @@ router.get("/avatars", async (req, res) => {
   } catch (error) {
     res.status(400).send(error);
   }
-}); 
+});
 
 router.patch("/avatar", async (req, res) => {
   try {
@@ -133,7 +153,5 @@ router.patch("/avatar", async (req, res) => {
     res.status(400).send(error);
   }
 });
-
-
 
 module.exports = router;
