@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "./index.js",
   "prisma": {
-    "seed": "node prisma/seeder/seeder.js"
+    "seed": "node prisma/seeder/seederDev.js"
   },
   "scripts": {
     "dev": "nodemon index.js",
@@ -16,7 +16,7 @@
     "prisma:generate": "npx prisma generate",
     "prisma:seed": "npx prisma db seed",
     "prisma:prod": "npm run prisma:generate && npm run prisma:migrate:reset && npm run prisma:seed",
-    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate:reset && node prisma/seeder/seederDev.js"
+    "prisma:dev": "npm run prisma:generate && npm run prisma:migrate:reset "
   },
   "author": "",
   "license": "ISC",

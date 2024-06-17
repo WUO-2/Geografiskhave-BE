@@ -318,11 +318,8 @@ const main = async () => {
     },
   });
 
-  const Poi1 = await prismaClient.poi.upsert({
-    where: { id: 1 },
-    update: {},
-    create: {
-      id: 1,
+  const Poi1 = await prismaClient.poi.create({
+    data: {
       name: "Rosenhaven",
       description:
         "Er du blomsterelsker, havenørd eller bare fisk på en skøn grøn oplevelse, så tag på opdagelse i vores pris-belønnede botaniske have, der byder på 14 ha med mere end 2000 forskellige arter og sorter af træer, buske og blomster indsamlet fra det meste af verden og plantet efter oprindelsesland. \n \nHaven er som nævnt prisbelønnet for de smukke rosenhaver med mere end 300 forskellige roser både historiske, moderne og vilde roser.",
@@ -332,11 +329,8 @@ const main = async () => {
       iconURL: "http://localhost:5000/assets/icons/Rosenhaven.png",
     },
   });
-  const Poi2 = await prismaClient.poi.upsert({
-    where: { id: 2 },
-    update: {},
-    create: {
-      id: 2,
+  const Poi2 = await prismaClient.poi.create({
+    data: {
       name: "Dyrefolden",
       description:
         "I dyrefolden kan I møde vores søde dyr, som er en del af Geografisk Have. ",
@@ -347,11 +341,8 @@ const main = async () => {
     },
   });
 
-  const Poi3 = await prismaClient.poi.upsert({
-    where: { id: 3 },
-    update: {},
-    create: {
-      id: 3,
+  const Poi3 = await prismaClient.poi.create({
+    data: {
       name: "Væksthusene",
       description: "væksthusene er fyldt med spændende planter fra hele verden",
       latitude: 55.474162,
@@ -361,11 +352,8 @@ const main = async () => {
     },
   });
 
-  const Poi4 = await prismaClient.poi.upsert({
-    where: { id: 4 },
-    update: {},
-    create: {
-      id: 4,
+  const Poi4 = await prismaClient.poi.create({
+    data: {
       name: "Naturhaven",
       description: "Naturhaven er fyldt med spændende planter fra hele verden",
       latitude: 55.473834,
@@ -376,11 +364,8 @@ const main = async () => {
     },
   });
 
-  const Poi5 = await prismaClient.poi.upsert({
-    where: { id: 5 },
-    update: {},
-    create: {
-      id: 5,
+  const Poi5 = await prismaClient.poi.create({
+    data: {
       name: "Tumlehaven",
       description: "Tumlehaven er fyldt med spændende planter fra hele verden",
       latitude: 55.473241,
@@ -390,11 +375,8 @@ const main = async () => {
     },
   });
 
-  const Poi6 = await prismaClient.poi.upsert({
-    where: { id: 6 },
-    update: {},
-    create: {
-      id: 6,
+  const Poi6 = await prismaClient.poi.create({
+    data: {
       name: "Legepladsen",
       description: "Legepladsen er fyldt med spændende planter fra hele verden",
       latitude: 55.474184,
