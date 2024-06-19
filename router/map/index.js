@@ -1,5 +1,5 @@
 const { PrismaClient } = require("@prisma/client");
-const { readdir, writeFile } = require("node:fs/promises");
+const { readdir, writeFile, unlink } = require("node:fs/promises");
 const multer = require("multer");
 const path = require("path");
 
@@ -47,21 +47,21 @@ router.get("/pois", async (req, res) => {
 
 router.post("/poi", upload.single("image"), async (req, res) => {
   try {
+    console.log(req.body);
     let u = await prisma.user.findUnique({
       where: {
         id: req.body.userId,
       },
     });
 
-    if (u.role === "USER") {
-      res.status(403).send("You are not allowed to perform this action");
+    if (u.role === "user") {
+      res.status(403).send("you are not allowed to perform this action");
       return;
     }
 
     const { name, latitude, longitude, iconURL, description } = req.body;
-    console.log(req.file);
 
-    const photoPath = `http://localhost:5000/assets/skattejagt/images/${req.file.filename}`;
+    const photopath = `http://localhost:5000/assets/skattejagt/images/${req.file.filename}`;
 
     let poi = await prisma.poi
       .create({
@@ -69,7 +69,7 @@ router.post("/poi", upload.single("image"), async (req, res) => {
           name: name,
           latitude: Number(latitude),
           longitude: Number(longitude),
-          imageURL: photoPath,
+          imageURL: photopath,
           iconURL: iconURL,
           description: description,
         },
@@ -80,6 +80,68 @@ router.post("/poi", upload.single("image"), async (req, res) => {
 
     res.status(201).send(poi);
   } catch (error) {
+    console.log(error);
+    res.status(400).send(error);
+  }
+});
+
+router.delete("/poi/:id", async (req, res) => {
+  try {
+    let u = await prisma.user.findUnique({
+      where: {
+        id: req.body.userId,
+      },
+    });
+    if (u.role === "USER") {
+      res.status(403).send("You are not allowed to perform this action");
+      return;
+    }
+    const { id } = req.params;
+    let poi = await prisma.poi.delete({
+      where: {
+        id: Number(id),
+      },
+    });
+    res.status(200).send(poi);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+router.put("/poi/:id", upload.single("image"), async (req, res) => {
+  try {
+    console.log(req.body);
+    let u = await prisma.user.findUnique({
+      where: {
+        id: req.body.userId,
+      },
+    });
+    if (u.role === "USER") {
+      res.status(403).send("You are not allowed to perform this action");
+      return;
+    }
+    const { id } = req.params;
+    const { name, latitude, longitude, iconURL, description } = req.body;
+    const photopath = req.body.imageURL
+      ? req.body.imageURL
+      : `http://localhost:5000/assets/skattejagt/images/${req.file.filename}`;
+
+    let poi = await prisma.poi.update({
+      where: {
+        id: Number(id),
+      },
+      data: {
+        name: name,
+        latitude: Number(latitude),
+        longitude: Number(longitude),
+        iconURL: iconURL,
+        imageURL: photopath,
+        description: description,
+      },
+    });
+    res.status(200).send(poi);
+  } catch (error) {
+    console.log(error);
     res.status(400).send(error);
   }
 });
