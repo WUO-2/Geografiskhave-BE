@@ -391,7 +391,7 @@ const main = async () => {
     update: {},
     create: {
       id: 1,
-      imageURL: "http://localhost:5000/assets/badges/BadgeProfile.png",
+      imageURL: "http://localhost:5000/assets/badges/Badgeprofil.png",
     },
   });
 

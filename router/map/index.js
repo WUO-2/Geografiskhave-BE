@@ -38,7 +38,6 @@ const prisma = new PrismaClient();
 router.get("/pois", async (req, res) => {
   try {
     const pois = await prisma.poi.findMany();
-    console.log(pois);
     res.status(200).send(pois);
   } catch (error) {
     res.status(400).send(error);
@@ -47,7 +46,6 @@ router.get("/pois", async (req, res) => {
 
 router.post("/poi", upload.single("image"), async (req, res) => {
   try {
-    console.log(req.body);
     let u = await prisma.user.findUnique({
       where: {
         id: req.body.userId,
@@ -110,7 +108,6 @@ router.delete("/poi/:id", async (req, res) => {
 
 router.put("/poi/:id", upload.single("image"), async (req, res) => {
   try {
-    console.log(req.body);
     let u = await prisma.user.findUnique({
       where: {
         id: req.body.userId,
