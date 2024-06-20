@@ -16,6 +16,7 @@ model User {
   currentTaskId      Int?
   imageURL           String          @default("https://geo-api.frannoflix.xyz/assets/avatars/bird.png")
   treasureHuntStatus Status          @default(NOT_STARTED)
+  seasonPass         DateTime?
 }
 
 model Badge {

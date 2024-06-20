@@ -118,7 +118,7 @@ router.get("/coins", async (req, res) => {
         id: requesterid,
       },
       select: {
-        points: true,
+        seasonPass: true,
       },
     });
     res.status(200).send({ points: coins.points });
@@ -150,6 +150,25 @@ router.patch("/avatar", async (req, res) => {
     });
     res.status(200).send(user);
   } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+router.get("/seasonpass", async (req, res) => {
+  try {
+    console.log(req.headers);
+    const { requesterid } = req.headers;
+    const seasonpass = await prisma.user.findUnique({
+      where: {
+        id: requesterid,
+      },
+      select: {
+        seasonPass: true,
+      },
+    });
+    res.status(200).send(seasonpass);
+  } catch (error) {
+    console.log(error);
     res.status(400).send(error);
   }
 });
