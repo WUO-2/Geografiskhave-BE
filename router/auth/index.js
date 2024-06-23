@@ -166,6 +166,7 @@ router.get("/seasonpass", async (req, res) => {
         seasonPass: true,
       },
     });
+    console.log(seasonpass);
     res.status(200).send(seasonpass);
   } catch (error) {
     console.log(error);
